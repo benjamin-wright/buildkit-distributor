@@ -15,7 +15,7 @@ buildkit:
 
 .PHONY: build
 build:
-	buildctl --addr tcp://localhost:3000 build \
+	cd ../buildkit && go run ./cmd/buildctl --addr tcp://localhost:3000 build \
 		--frontend dockerfile.v0 \
 		--local context=. \
 		--local dockerfile=. \

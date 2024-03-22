@@ -40,7 +40,7 @@ func run() error {
 							return status.Errorf(codes.Internal, "lowLevelServerStream not exists in context")
 						}
 
-						log.Info().Str("fullMethodName", fullMethodName).Msg("ListWorkers")
+						log.Info().Str("fullMethodName", fullMethodName).Interface("srv", srv).Msg("ListWorkers")
 
 						md, ok := metadata.FromIncomingContext(serverStream.Context())
 						if !ok {
